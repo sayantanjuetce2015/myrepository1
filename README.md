@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Todolist MVC
 
 Todolist MVC is like [TodoMVC][] but for Java Web Frameworks instead of Javascript Frameworks.
@@ -120,3 +121,6 @@ Todolist MVC is released under the [MIT License][].
 [TechEmpower's Framework Benchmarks]: https://github.com/TechEmpower/FrameworkBenchmarks
 [Twitter Bootstrap]: http://getbootstrap.com/
 [MIT License]: http://opensource.org/licenses/mit-license.php/
+=======
+# myrepository1
+>>>>>>> a3ef22cb3eb37c9b153460ee63b127314faa9407

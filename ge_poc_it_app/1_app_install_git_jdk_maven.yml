@@ -1,0 +1,31 @@
+---
+- hosts: app_vm_inventory
+  sudo: yes
+  tasks:
+   - name: Repo update
+     shell: sudo apt-get update
+   - name: pause for 5 sec
+     pause: seconds=5
+   - name: Install git
+     apt: pkg=git state=installed
+   - name: pause for 5 sec
+     pause: seconds=5
+   - name: Install openjdk-7-jdk
+     apt: pkg=openjdk-7-jdk state=installed
+   - name: pause for 5 sec
+     pause: seconds=5
+   - name: Install maven
+     apt: pkg=maven state=installed
+   - name: create maven .m2 folder
+     shell: mkdir /home/cloud/.m2
+   - name: change owner of .m2
+     shell: chown -R cloud:cloud /home/cloud/.m2
+#   - name: pause for 5 sec
+#     pause: seconds=5
+
+#   - name: Create an empty directory
+#     shell: mkdir todolist
+#   - name: Clone Sourcecode
+#     command: git clone https://github.com/aviseksarkar/todolist.git
+   - name: set GIt proxy
+     shell: git config --global http.proxy 10.118.0.48:3128

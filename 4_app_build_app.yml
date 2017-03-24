@@ -1,0 +1,11 @@
+---
+- hosts: app_vm_inventory
+  sudo: no
+  tasks:
+#   - name: Clone Sourcecode
+#     command: git clone https://github.com/aviseksarkar/todolist.git
+   - name: Build the todolist appC
+     command: mvn install
+     args:
+       chdir: /home/ubuntu/todolist/
+     

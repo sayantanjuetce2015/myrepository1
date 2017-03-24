@@ -1,0 +1,16 @@
+---
+- hosts: app_vm_inventory
+  sudo: no
+  tasks:
+   - name: set var
+     set_fact:
+       myvar={{ansible_eth0['ipv4']['address']}}
+#   - debug: msg="System {{ myvar }}"
+   - name: Replace database.properties
+     replace: dest=/home/ubuntu/todolist/todolist-core/src/main/resources/config/database.properties regexp='lo.*?st' replace='{{ip}}'
+   - name: Replace persistence.xml
+     replace: dest=/home/ubuntu/todolist/todolist-core/src/main/resources/META-INF/persistence.xml regexp='lo.*?st' replace='{{ip}}'
+#   - name: Replace database.properties
+#     replace: dest=/home/ubuntu/todolist/todolist-core/src/main/resources/config/database.properties regexp='lo.*?st' replace='{{myvar}}'
+#   - name: Replace persistence.xml
+#     replace: dest=/home/ubuntu/todolist/todolist-core/src/main/resources/META-INF/persistence.xml regexp='lo.*?st' replace='{{myvar}}'

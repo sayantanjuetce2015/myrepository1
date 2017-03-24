@@ -1,0 +1,13 @@
+---
+- hosts: servers-t14
+  sudo: yes
+  tasks:
+   - name: Install tomcat7
+     apt: pkg=tomcat7 state=installed
+     notify:
+      - start tomcat7
+   - name: Deploy ITAPP WAR in Tomcat
+     copy: src=/var/lib/jenkins/jobs/HDS_POC_IT_APP_CloneAndBuild/workspace/todolist-web-servlet-jsp/target/todolist.war dest=/var/lib/tomcat7/webapps/
+  handlers:
+   - name: start tomcat7
+     service: name=tomcat7 state=started

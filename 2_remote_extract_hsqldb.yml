@@ -1,0 +1,6 @@
+---
+- hosts: db_vm_inventory 
+  sudo: no
+  tasks:
+   - name:  untar hsqlDB in remote server
+     command: tar -xf /home/ubuntu/hsqldb.tar

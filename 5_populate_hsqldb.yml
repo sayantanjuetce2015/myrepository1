@@ -1,0 +1,7 @@
+---
+- hosts: db_vm_inventory 
+  sudo: no
+  tasks:
+   - name: Create tables and populate default records in HSQLDB
+     command: java -jar /home/ubuntu/hsqldb-2.3.3/hsqldb/lib/sqltool.jar localhost-todoclient /home/ubuntu/hsqldb-2.3.3/hsqldb/create.sql
+

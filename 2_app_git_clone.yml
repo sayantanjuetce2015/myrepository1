@@ -1,0 +1,12 @@
+---
+- hosts: app_vm_inventory
+  sudo: no
+  tasks:
+#   - name: Clone Sourcecode
+#     command: git clone https://github.com/aviseksarkar/todolist.git
+   - name: set Git proxy
+     shell: git config --global http.proxy http://10.7.0.140:8081
+   - name: Clone the source code from github
+     git: repo=https://github.com/aviseksarkar/todolist.git dest=/home/ubuntu/todolist
+#   - name: Change owner:group of todolist to ubuntu:ubuntu
+#     shell: sudo chown ubuntu:ubuntu todolist/ -R

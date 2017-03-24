@@ -1,0 +1,15 @@
+---
+- hosts: db_vm_inventory 
+  sudo: no
+  tasks:
+   - name: Copy SqlTool
+     command: cp /home/ubuntu/hsqldb-2.3.3/hsqldb/sample/sqltool.rc /home/ubuntu/
+   - name: Append line1
+     shell: echo "urlid localhost-todoclient" >> /home/ubuntu/sqltool.rc
+   - name: Append line2
+     shell: echo "url jdbc:hsqldb:hsql://localhost/todolistdb" >> /home/ubuntu/sqltool.rc
+   - name: Append line3
+     shell: echo "username SA" >> /home/ubuntu/sqltool.rc
+   - name: Append line4
+     shell: echo "password" >> /home/ubuntu/sqltool.rc
+

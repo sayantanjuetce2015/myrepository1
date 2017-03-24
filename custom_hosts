@@ -1,0 +1,15 @@
+[servers-t11]
+#10.111.148.174 ansible_ssh_user=vzdevopst1 ansible_ssh_pass=vzdevops.123
+192.168.1.11 ansible_ssh_user=ubuntu ansible_ssh_pass=vzdevops
+#127.0.0.1 ansible_ssh_user=ubuntu ansible_ssh_pass=vzdevops
+[servers-t12]
+#10.111.148.169 ansible_ssh_user=vzdevopsh1 ansible_ssh_pass=vzdevops.123
+192.168.1.10 ansible_ssh_user=ubuntu ansible_ssh_pass=vzdevops
+[servers-t14]
+192.168.1.14 ansible_ssh_user=ubuntu ansible_ssh_pass=vzdevops
+[server-t10]
+192.168.1.10 ansible_ssh_user=ubuntu ansible_ssh_pass=vzdevops
+[server_app_vm]
+192.168.1.13 ansible_ssh_user=ubuntu ansible_ssh_pass=vzdevops
+[server_db_vm]
+192.168.1.10 ansible_ssh_user=ubuntu ansible_ssh_pass=vzdevops

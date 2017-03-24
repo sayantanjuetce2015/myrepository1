@@ -1,0 +1,6 @@
+---
+- hosts: db_vm_inventory
+  sudo: no
+  tasks:
+   - name: Copy HLQLDB to remote server
+     copy: src=/home/ubuntu/hds_poc_it_app/hsqldb.tar dest=/home/ubuntu

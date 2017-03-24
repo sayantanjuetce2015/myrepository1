@@ -1,0 +1,9 @@
+---
+- hosts: servers-t11
+  sudo: yes
+  tasks:
+   - name: Remote host add
+     script: /home/ubuntu/hds_poc_it_app/appvm2/modify_hosts.py
+   - name: Remote proxy set
+     script: /home/ubuntu/hds_poc_it_app/appvm2/modify_apt-conf.py
+

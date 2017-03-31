@@ -1,0 +1,2 @@
+[db_vm_inventory]
+192.168.1.10 ansible_ssh_user=ubuntu ansible_ssh_pass=vzdevops

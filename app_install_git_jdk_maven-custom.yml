@@ -1,0 +1,18 @@
+---
+- hosts: server_app_vm
+  sudo: yes
+  tasks:
+   - debug: var=ansible_eth0['ipv4']['address']
+   - debug: "test string"
+   - name: Install git
+     apt: pkg=git state=installed
+   - name: Install openjdk-7-jdk
+     apt: pkg=openjdk-7-jdk state=installed
+   - name: Install maven
+     apt: pkg=maven state=installed
+   - name: Create an empty directory
+     shell: mkdir todolist
+#   - name: Clone Sourcecode
+#     command: git clone https://github.com/aviseksarkar/todolist.git
+   - name: set GIt proxy
+     shell: git config --global http.proxy 10.7.0.140:8081

@@ -1,0 +1,7 @@
+---
+- hosts: db_vm_inventory 
+  sudo: no
+  tasks:
+   - name: Launching HSQLDB server
+     shell: nohup java -classpath /home/ubuntu/hsqldb-2.3.3/hsqldb/lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:hsqldb/HDS8000DB --dbname.0 todolistdb &
+

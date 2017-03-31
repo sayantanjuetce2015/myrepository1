@@ -1,0 +1,11 @@
+---
+- hosts: app_vm_inventory
+  sudo: no
+  tasks:
+#   - name: Clone Sourcecode
+#     command: git clone https://github.com/aviseksarkar/todolist.git
+   - name: Deploying the ToDo list app with embedded tomcat
+     shell: nohup mvn tomcat7:run &
+     args:
+       chdir: /home/ubuntu/todolist/todolist-web-springmvc/
+     

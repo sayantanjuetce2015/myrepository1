@@ -1,0 +1,9 @@
+---
+- hosts: app_vm_inventory
+  sudo: no
+  tasks:
+#   - name: Clone Sourcecode
+#     command: git clone https://github.com/aviseksarkar/todolist.git
+   - name: Set Maven proxy setting
+     copy: src=/home/ubuntu/hds_poc_it_app/settings.xml dest=/home/ubuntu/.m2/settings.xml
+     

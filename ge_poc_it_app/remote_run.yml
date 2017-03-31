@@ -1,0 +1,9 @@
+---
+- hosts: app_vm_inventory
+  sudo: yes
+  tasks:
+   - name: Remote host add
+     script: /home/ubuntu/ge_poc_it_app/modify_hosts.py
+   - name: Remote proxy set
+     script: /home/ubuntu/ge_poc_it_app/modify_apt-conf.py
+

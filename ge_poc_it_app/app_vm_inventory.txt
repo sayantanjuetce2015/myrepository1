@@ -1,0 +1,2 @@
+[app_vm_inventory]
+10.118.41.149 ansible_ssh_user=cloud ansible_ssh_pass=ericsson
